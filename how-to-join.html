@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html class="light" lang="en-AU">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>How to Join | ProBall Sydney Youth Basketball</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-variant":           "#e4e2e1",
+            "surface-tint":              "#c0030a",
+            "secondary":                 "#4c5b95",
+            "surface-container-lowest":  "#ffffff",
+            "tertiary":                  "#5b5c5c",
+            "surface":                   "#fbf9f8",
+            "surface-dim":               "#dcd9d9",
+            "on-background":             "#1b1c1c",
+            "inverse-primary":           "#ffb4a9",
+            "surface-container-low":     "#f6f3f2",
+            "outline-variant":           "#e6bdb7",
+            "surface-container-highest": "#e4e2e1",
+            "surface-container-high":    "#eae8e7",
+            "secondary-fixed-dim":       "#b7c4ff",
+            "secondary-fixed":           "#dce1ff",
+            "on-secondary":              "#ffffff",
+            "primary":                   "#bc0008",
+            "primary-fixed-dim":         "#ffb4a9",
+            "inverse-surface":           "#303030",
+            "primary-container":         "#e12720",
+            "secondary-container":       "#afbefe",
+            "surface-container":         "#f0eded",
+            "on-surface-variant":        "#5d3f3b",
+            "on-surface":                "#1b1c1c",
+            "on-secondary-fixed":        "#02164e",
+            "on-secondary-container":    "#3d4c84",
+            "on-primary":                "#ffffff",
+            "background":                "#fbf9f8",
+            "primary-fixed":             "#ffdad5",
+            "on-primary-container":      "#fffbff",
+            "inverse-on-surface":        "#f3f0f0"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg":      "0.5rem",
+            "xl":      "0.75rem",
+            "full":    "9999px"
+          },
+          spacing: {
+            "xs":     "4px",
+            "sm":     "12px",
+            "base":   "8px",
+            "md":     "24px",
+            "lg":     "48px",
+            "xl":     "80px",
+            "gutter": "24px"
+          },
+          fontFamily: {
+            "display-lg":  ["Lexend", "sans-serif"],
+            "headline-lg": ["Lexend", "sans-serif"],
+            "headline-md": ["Lexend", "sans-serif"],
+            "body-lg":     ["Lexend", "sans-serif"],
+            "body-md":     ["Lexend", "sans-serif"],
+            "label-lg":    ["Lexend", "sans-serif"],
+            "button":      ["Lexend", "sans-serif"]
+          },
+          fontSize: {
+            "display-lg":  ["48px",  { lineHeight: "56px",  letterSpacing: "-0.02em", fontWeight: "800" }],
+            "headline-lg": ["32px",  { lineHeight: "40px",  letterSpacing: "-0.01em", fontWeight: "700" }],
+            "headline-md": ["24px",  { lineHeight: "32px",  fontWeight: "700" }],
+            "body-lg":     ["18px",  { lineHeight: "28px",  fontWeight: "400" }],
+            "body-md":     ["16px",  { lineHeight: "24px",  fontWeight: "400" }],
+            "label-lg":    ["14px",  { lineHeight: "20px",  letterSpacing: "0.05em", fontWeight: "600" }],
+            "button":      ["16px",  { lineHeight: "20px",  fontWeight: "700" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Lexend', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Dot grid pattern for hero */
+    .court-pattern {
+      background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════════════ -->
+<header class="bg-white border-b-2 border-slate-100 shadow-sm sticky top-0 z-50">
+  <nav class="flex justify-between items-center w-full px-6 py-3 max-w-7xl mx-auto">
+    <a href="index.html" class="flex-shrink-0">
+      <img src="https://ik.imagekit.io/xckefgqnh/wp-content/uploads/2025/04/ProBall_Logo.jpg" alt="ProBall" class="h-12 w-auto object-contain"/>
+    </a>
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="index.html"       class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Home</a>
+      <a href="locations.html"   class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Programmes & Locations</a>
+      <a href="schedule.html"    class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Schedule</a>
+      <a href="team.html"        class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Our Team</a>
+      <a href="blog/index.html"        class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Blog</a>
+      <a href="how-to-join.html" class="text-primary font-bold border-b-2 border-primary pb-0.5">How to Join</a>
+    </div>
+    <div class="flex items-center gap-sm">
+      <a href="#register"
+         class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-button text-button hover:scale-105 active:scale-95 transition-all shadow-sm">
+        Book a Free Trial
+      </a>
+      <button id="nav-toggle" class="md:hidden p-2 text-slate-600 hover:text-primary transition-colors" aria-label="Open menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-4">
+    <a href="index.html"       class="block text-slate-600 font-medium hover:text-primary">Home</a>
+    <a href="locations.html"   class="block text-slate-600 font-medium hover:text-primary">Programmes & Locations</a>
+    <a href="schedule.html"    class="block text-slate-600 font-medium hover:text-primary">Schedule</a>
+    <a href="team.html"        class="block text-slate-600 font-medium hover:text-primary">Our Team</a>
+    <a href="blog/index.html"        class="block text-slate-600 font-medium hover:text-primary">Blog</a>
+    <a href="how-to-join.html" class="block text-primary font-bold">How to Join</a>
+  </div>
+</header>
+
+<main class="flex-grow">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="relative bg-secondary py-xl overflow-hidden">
+    <!-- Dot pattern -->
+    <div class="absolute inset-0 court-pattern"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-lg">
+
+      <!-- Left: copy -->
+      <div class="md:w-1/2">
+        <span class="inline-block bg-primary text-on-primary font-label-lg text-label-lg uppercase rounded-full px-4 py-1 mb-6">
+          Start Your Journey Today
+        </span>
+        <h1 class="font-display-lg text-display-lg text-white uppercase leading-[0.95] mb-6 italic">
+          Join the Elite
+        </h1>
+        <p class="font-body-lg text-body-lg text-secondary-fixed mb-md max-w-xl">
+          Our proven three-step process ensures every athlete is placed in the right environment to thrive. Book your free trial and let our coaches handle the rest.
+        </p>
+        <a href="#register" class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-lg font-button text-button hover:scale-105 transition-all shadow-lg">
+          Register Your Interest
+          <span class="material-symbols-outlined">arrow_downward</span>
+        </a>
+      </div>
+
+      <!-- Right: photo -->
+      <div class="md:w-1/2 relative">
+        <div class="aspect-video rounded-xl overflow-hidden shadow-2xl border-4 border-white/10">
+          <img
+            src="https://ik.imagekit.io/xckefgqnh/wp-content/uploads/2025/05/Innovation.jpg"
+            alt="ProBall elite youth basketball training"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       3-STEP JOURNEY
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="py-xl max-w-7xl mx-auto px-gutter">
+
+    <!-- Header -->
+    <div class="text-center mb-lg">
+      <h2 class="font-headline-lg text-headline-lg text-on-background uppercase tracking-tight mb-3">Your Step-By-Step Path</h2>
+      <div class="h-1 w-20 bg-primary mx-auto"></div>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-lg relative">
+
+      <!-- Connector line (desktop) -->
+      <div class="hidden md:block absolute top-8 left-1/6 right-1/6 h-0.5 bg-surface-variant z-0"
+           style="left: 13%; right: 13%;"></div>
+
+      <!-- Step 1 -->
+      <div class="relative z-10 flex flex-col items-center">
+        <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center font-display-lg text-2xl mb-md shadow-lg ring-4 ring-primary/20 flex-shrink-0">
+          01
+        </div>
+        <div class="bg-white p-md rounded-xl shadow-sm border-l-4 border-secondary w-full hover:shadow-md transition-shadow">
+          <span class="material-symbols-outlined text-primary mb-base text-3xl">sports_basketball</span>
+          <h3 class="font-headline-md text-headline-md mb-xs uppercase">Book Your Trial</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Fill in the form below and our team will reach out within 48 hours to schedule your first free session at your preferred venue. No experience needed.
+          </p>
+          <div class="mt-md bg-surface-container-low p-sm rounded-lg flex items-center gap-xs">
+            <span class="material-symbols-outlined text-primary text-sm">info</span>
+            <span class="font-label-lg text-xs">First 4 weeks are FREE for new members</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="relative z-10 flex flex-col items-center">
+        <div class="w-16 h-16 rounded-full bg-secondary text-white flex items-center justify-center font-display-lg text-2xl mb-md shadow-lg ring-4 ring-secondary/20 flex-shrink-0">
+          02
+        </div>
+        <div class="bg-white p-md rounded-xl shadow-sm border-l-4 border-primary w-full hover:shadow-md transition-shadow">
+          <span class="material-symbols-outlined text-secondary mb-base text-3xl">assignment_ind</span>
+          <h3 class="font-headline-md text-headline-md mb-xs uppercase">Player Assessment</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Our elite coaching staff evaluate skill level, athletic potential, and game IQ. We place every athlete in the right programme — challenged but never overwhelmed.
+          </p>
+          <div class="mt-md bg-surface-container-low p-sm rounded-lg flex items-center gap-xs">
+            <span class="material-symbols-outlined text-secondary text-sm">event</span>
+            <span class="font-label-lg text-xs">Ongoing assessment · Not a one-off tryout</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="relative z-10 flex flex-col items-center">
+        <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center font-display-lg text-2xl mb-md shadow-lg ring-4 ring-primary/20 flex-shrink-0">
+          03
+        </div>
+        <div class="bg-white p-md rounded-xl shadow-sm border-l-4 border-secondary w-full hover:shadow-md transition-shadow">
+          <span class="material-symbols-outlined text-primary mb-base text-3xl">groups</span>
+          <h3 class="font-headline-md text-headline-md mb-xs uppercase">Team Placement</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Athletes are placed into the right squad — Miniball, Academy classes, or a competition Team. From local development leagues to representative squads.
+          </p>
+          <div class="mt-md bg-surface-container-low p-sm rounded-lg flex items-center gap-xs">
+            <span class="material-symbols-outlined text-primary text-sm">military_tech</span>
+            <span class="font-label-lg text-xs">Official ProBall uniform kit provided</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       REGISTRATION FORM
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="register" class="bg-surface-container py-xl">
+    <div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-lg items-start">
+
+      <!-- Left: info -->
+      <div>
+        <h2 class="font-headline-lg text-headline-lg uppercase mb-4">Register Your Interest</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-md">
+          Ready to take the court? Fill in the form and our team will be in touch within 48 hours to organise your first free trial session.
+        </p>
+
+        <div class="space-y-base">
+
+          <div class="flex items-start gap-md p-md bg-white rounded-xl shadow-sm">
+            <div class="bg-primary/10 p-base rounded-lg flex-shrink-0">
+              <span class="material-symbols-outlined text-primary">call</span>
+            </div>
+            <div>
+              <p class="font-label-lg text-label-lg uppercase mb-1">Phone</p>
+              <a href="tel:0406974582" class="font-body-md text-body-md text-on-background hover:text-primary transition-colors">
+                0406 974 582
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-md p-md bg-white rounded-xl shadow-sm">
+            <div class="bg-primary/10 p-base rounded-lg flex-shrink-0">
+              <span class="material-symbols-outlined text-primary">mail</span>
+            </div>
+            <div>
+              <p class="font-label-lg text-label-lg uppercase mb-1">Email</p>
+              <a href="mailto:info@proball.com" class="font-body-md text-body-md text-on-background hover:text-primary transition-colors">
+                info@proball.com
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-md p-md bg-white rounded-xl shadow-sm">
+            <div class="bg-primary/10 p-base rounded-lg flex-shrink-0">
+              <span class="material-symbols-outlined text-primary">schedule</span>
+            </div>
+            <div>
+              <p class="font-label-lg text-label-lg uppercase mb-1">Response Time</p>
+              <p class="font-body-md text-body-md text-on-background">Within 48 hours</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Programme quick links -->
+        <div class="mt-lg bg-secondary text-white rounded-xl p-md">
+          <p class="font-label-lg text-label-lg uppercase mb-3">Not sure which programme?</p>
+          <div class="grid grid-cols-3 gap-base text-center">
+            <a href="locations.html" class="bg-white/10 hover:bg-white/20 rounded-lg py-3 px-2 transition-colors">
+              <span class="material-symbols-outlined text-white text-xl block mb-1">sports_basketball</span>
+              <span class="font-label-lg text-xs uppercase">Miniball</span>
+            </a>
+            <a href="locations.html" class="bg-white/10 hover:bg-white/20 rounded-lg py-3 px-2 transition-colors">
+              <span class="material-symbols-outlined text-white text-xl block mb-1">school</span>
+              <span class="font-label-lg text-xs uppercase">Academy</span>
+            </a>
+            <a href="locations.html" class="bg-white/10 hover:bg-white/20 rounded-lg py-3 px-2 transition-colors">
+              <span class="material-symbols-outlined text-white text-xl block mb-1">trophy</span>
+              <span class="font-label-lg text-xs uppercase">Teams</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: form -->
+      <div class="bg-white p-lg rounded-xl shadow-lg border-t-8 border-primary">
+        <h3 class="font-headline-md text-headline-md mb-md">Player Details</h3>
+        <form class="space-y-md" onsubmit="handleSubmit(event)">
+
+          <!-- Name row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+            <div class="flex flex-col gap-xs">
+              <label class="font-label-lg text-label-lg text-on-surface uppercase">Athlete First Name</label>
+              <input
+                type="text"
+                placeholder="e.g. Jamie"
+                required
+                class="border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all"
+              />
+            </div>
+            <div class="flex flex-col gap-xs">
+              <label class="font-label-lg text-label-lg text-on-surface uppercase">Athlete Last Name</label>
+              <input
+                type="text"
+                placeholder="e.g. Smith"
+                required
+                class="border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all"
+              />
+            </div>
+          </div>
+
+          <!-- Age + Gender -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+            <div class="flex flex-col gap-xs">
+              <label class="font-label-lg text-label-lg text-on-surface uppercase">Athlete Age</label>
+              <input
+                type="number"
+                placeholder="e.g. 9"
+                min="3" max="18"
+                required
+                class="border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all"
+              />
+            </div>
+            <div class="flex flex-col gap-xs">
+              <label class="font-label-lg text-label-lg text-on-surface uppercase">Gender</label>
+              <select class="border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all bg-white">
+                <option value="">Select...</option>
+                <option>Boy</option>
+                <option>Girl</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Parent email + phone -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+            <div class="flex flex-col gap-xs">
+              <label class="font-label-lg text-label-lg text-on-surface uppercase">Parent / Guardian Email</label>
+              <input
+                type="email"
+                placeholder="parent@example.com"
+                required
+                class="border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all"
+              />
+            </div>
+            <div class="flex flex-col gap-xs">
+              <label class="font-label-lg text-label-lg text-on-surface uppercase">Parent / Guardian Phone</label>
+              <input
+                type="tel"
+                placeholder="04XX XXX XXX"
+                class="border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all"
+              />
+            </div>
+          </div>
+
+          <!-- Programme -->
+          <div class="flex flex-col gap-xs">
+            <label class="font-label-lg text-label-lg text-on-surface uppercase">Interested Programme</label>
+            <select required class="border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all bg-white">
+              <option value="">Select a programme...</option>
+              <option>Miniball (Ages 5–10)</option>
+              <option>Academy (Ages 5+)</option>
+              <option>Teams / Competition (Ages 5–13)</option>
+              <option>Not sure — advise me</option>
+            </select>
+          </div>
+
+          <!-- Preferred location -->
+          <div class="flex flex-col gap-xs">
+            <label class="font-label-lg text-label-lg text-on-surface uppercase">Preferred Location</label>
+            <select class="border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all bg-white">
+              <option value="">Select a venue...</option>
+              <optgroup label="Miniball">
+                <option>Leichhardt (Sydney Secondary College) · Sat</option>
+                <option>Green Square (Green Square Public School) · Sun</option>
+              </optgroup>
+              <optgroup label="Academy">
+                <option>Maroubra (Heffron Centre)</option>
+                <option>Surry Hills (Inner Sydney High School)</option>
+                <option>Zetland (Green Square Public School)</option>
+                <option>Leichhardt (Sydney Secondary College)</option>
+                <option>Marrickville (Wilkins Public School)</option>
+                <option>Maroubra (South Sydney High School)</option>
+                <option>Eastern Suburbs (Centennial Parklands)</option>
+              </optgroup>
+              <optgroup label="Teams">
+                <option>Alexandria</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- Notes -->
+          <div class="flex flex-col gap-xs">
+            <label class="font-label-lg text-label-lg text-on-surface uppercase">Additional Notes</label>
+            <textarea
+              placeholder="Previous experience, specific goals, any questions for our coaches..."
+              class="border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all h-28 resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-primary text-on-primary font-button text-button py-4 rounded-xl shadow-lg hover:bg-primary-container hover:scale-[1.02] active:scale-[0.98] transition-all uppercase tracking-widest"
+          >
+            Submit Registration
+          </button>
+
+          <p class="font-body-md text-xs text-tertiary text-center">
+            We'll be in touch within 48 hours. Your first 4 weeks are free.
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer class="bg-slate-900 border-t-4 border-primary w-full py-12 mt-auto">
+  <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+    <div class="flex flex-col">
+      <div class="bg-white rounded-lg px-3 py-2 inline-block self-start mb-4">
+        <img src="https://ik.imagekit.io/xckefgqnh/wp-content/uploads/2025/04/ProBall_Logo.jpg" alt="ProBall" class="h-8 w-auto object-contain"/>
+      </div>
+      <p class="font-body-md text-sm text-slate-300 mb-6 leading-relaxed">
+        Developing the next generation of Australian basketball talent through elite coaching and structured development.
+      </p>
+      <div class="flex space-x-3">
+        <a href="http://www.facebook.com/proballaustralia" target="_blank" rel="noopener"
+           class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-primary transition-colors" aria-label="Facebook">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/proball_basketball/" target="_blank" rel="noopener"
+           class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-primary transition-colors" aria-label="Instagram">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-8">
+      <div>
+        <h5 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Quick Links</h5>
+        <ul class="space-y-4">
+          <li><a href="index.html#programmes" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Programmes</a></li>
+          <li><a href="locations.html"        class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Centres</a></li>
+          <li><a href="how-to-join.html"      class="font-body-md text-sm text-white font-bold">Join a Team</a></li>
+          <li><a href="#"                     class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Contact</h5>
+        <ul class="space-y-4">
+          <li><a href="tel:0406974582"          class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">0406 974 582</a></li>
+          <li><a href="mailto:info@proball.com" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">info@proball.com</a></li>
+          <li><a href="#"                       class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <h5 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Stay in the Loop</h5>
+      <p class="font-body-md text-sm text-slate-300 mb-4 leading-relaxed">Get trial dates and season openings straight to your inbox.</p>
+      <div class="flex gap-2">
+        <input type="email" placeholder="Email address" class="bg-slate-800 border-none rounded-lg px-4 py-3 text-white text-sm focus:ring-2 focus:ring-primary w-full placeholder-slate-500 outline-none"/>
+        <button class="bg-primary text-on-primary p-3 rounded-lg hover:bg-primary-container transition-colors flex-shrink-0">
+          <span class="material-symbols-outlined">send</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-slate-800 text-center">
+    <p class="font-body-md text-xs text-slate-500">© 2025 ProBall. All rights reserved. Sydney's youth basketball programme.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('nav-toggle').addEventListener('click', function () {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type=submit]');
+    btn.textContent = 'Submitted! We\'ll be in touch soon.';
+    btn.disabled = true;
+    btn.classList.remove('bg-primary', 'hover:bg-primary-container');
+    btn.classList.add('bg-secondary', 'cursor-default');
+  }
+</script>
+
+</body>
+</html>
