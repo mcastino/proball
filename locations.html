@@ -93,6 +93,9 @@
     /* Sidebar active state */
     .programme-tab.active { border-left-color: #bc0008; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
     .programme-tab.active .tab-title { color: #bc0008; }
+    /* Mobile tab strip */
+    .mobile-tab { transition: color 0.15s, border-color 0.15s; }
+    .mobile-tab.active { color: #bc0008; border-bottom-color: #bc0008; }
     #mobile-menu { display: none; }
     #mobile-menu.open { display: block; }
   </style>
@@ -164,12 +167,21 @@
        MAIN CONTENT: SIDEBAR + LOCATIONS
   ═══════════════════════════════════════════════════════════ -->
   <section class="max-w-7xl mx-auto px-6 py-xl">
+    <!-- Mobile tab strip (hidden on desktop) -->
+    <div class="lg:hidden sticky top-[72px] bg-background z-40 -mx-6 border-b border-slate-200 mb-6">
+      <div class="flex">
+        <button class="mobile-tab active flex-1 py-3 text-center font-label-lg text-label-lg uppercase text-primary border-b-2 border-primary" onclick="switchTab('miniball', this)">Miniball</button>
+        <button class="mobile-tab flex-1 py-3 text-center font-label-lg text-label-lg uppercase text-tertiary border-b-2 border-transparent" onclick="switchTab('academy', this)">Academy</button>
+        <button class="mobile-tab flex-1 py-3 text-center font-label-lg text-label-lg uppercase text-tertiary border-b-2 border-transparent" onclick="switchTab('teams', this)">Teams</button>
+      </div>
+    </div>
+
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
 
       <!-- ───────────────────────────────────────────
            SIDEBAR: Programme Selector (sticky)
       ─────────────────────────────────────────── -->
-      <div class="lg:col-span-4 lg:sticky lg:top-24 space-y-gutter">
+      <div class="hidden lg:block lg:col-span-4 lg:sticky lg:top-24 space-y-gutter">
         <h2 class="font-headline-lg text-headline-lg mb-base">Select Programme</h2>
 
         <!-- Miniball Tab -->
@@ -714,17 +726,24 @@
   });
 
   function switchTab(tabId, el) {
-    // Hide all tab content
     document.querySelectorAll('.tab-content').forEach(function (t) { t.classList.remove('active'); });
-    // Deactivate all sidebar tabs
     document.querySelectorAll('.programme-tab').forEach(function (t) {
       t.classList.remove('active');
       t.style.borderLeftColor = '';
     });
-    // Show selected content
+    document.querySelectorAll('.mobile-tab').forEach(function (t) {
+      t.classList.remove('active');
+      t.style.borderBottomColor = '';
+      t.classList.remove('text-primary');
+      t.classList.add('text-tertiary');
+    });
     document.getElementById('tab-' + tabId).classList.add('active');
-    // Activate clicked tab
     el.classList.add('active');
+    el.classList.remove('text-tertiary');
+    el.classList.add('text-primary');
+    if (window.innerWidth < 1024) {
+      document.getElementById('tab-' + tabId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 </script>
 
