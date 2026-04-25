@@ -1,4 +1,6 @@
 {
+  "buildCommand": "npx @11ty/eleventy",
+  "outputDirectory": "_site",
   "redirects": [
     { "source": "/miniball", "destination": "/locations.html", "permanent": true },
     { "source": "/miniball/", "destination": "/locations.html", "permanent": true },
