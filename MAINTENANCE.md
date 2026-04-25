@@ -1,48 +1,79 @@
 # ProBall Website — Maintenance Guide
 
-## Overview
-
-Static site built with **Eleventy (11ty)**. Source files live in this repo. Every push to `master` triggers an automatic build and deploy on **Vercel**. The client publishes blog posts through **Sveltia CMS** at `/admin`.
+This document explains how the ProBall website works, how to make common changes, and what to do when something goes wrong. You don't need to be a developer to follow most of these steps.
 
 ---
 
-## Hosting & Services
+## Table of Contents
 
-| Service | Purpose | Login |
+1. [How the website works](#how-the-website-works)
+2. [Accounts & logins](#accounts--logins)
+3. [Publishing a blog post (via CMS)](#publishing-a-blog-post-via-cms)
+4. [Publishing a blog post (manually)](#publishing-a-blog-post-manually)
+5. [Registration form & email notifications](#registration-form--email-notifications)
+6. [Changing environment variables](#changing-environment-variables)
+7. [Adding a URL redirect](#adding-a-url-redirect)
+8. [Switching to the proball.com domain](#switching-to-the-proballcom-domain)
+9. [Running the site locally](#running-the-site-locally)
+10. [Key files reference](#key-files-reference)
+
+---
+
+## How the website works
+
+The website is a collection of HTML files stored in a GitHub repository. When a change is pushed to GitHub, **Vercel** (the hosting platform) automatically rebuilds and publishes the site within about 30 seconds. There is no database — everything is a file.
+
+**The blog** is the only part that changes regularly. Blog posts are written as simple text files. The client can write and publish posts themselves through a browser-based editor called **Sveltia CMS** — they never need to touch code.
+
+**The registration form** on the How to Join page sends an email to `info@proball.com` every time someone submits their details.
+
+---
+
+## Accounts & logins
+
+| Service | What it's for | How to log in |
 |---|---|---|
-| **Vercel** | Hosting + serverless functions | vercel.com — mcastino account |
-| **GitHub** | Source code + CMS backend | github.com/mcastino/proball |
-| **GitHub OAuth App** | CMS authentication | github.com → Settings → Developer settings → OAuth Apps → "ProBall CMS" |
-| **Resend** | Transactional email (form notifications) | resend.com — signed in via GitHub |
+| **Vercel** | Hosts the website | vercel.com — mcastino account |
+| **GitHub** | Stores the code | github.com/mcastino/proball |
+| **Resend** | Sends emails from the registration form | resend.com — sign in with GitHub |
+| **GitHub OAuth App** | Allows the CMS to log in via GitHub | github.com → Settings → Developer settings → OAuth Apps → "ProBall CMS" |
+
+**Client CMS login:**
+- URL: `proball.com/admin` (or `proball.vercel.app/admin` in dev)
+- Click "Sign In with GitHub"
+- GitHub username: `proball-cms`
+- GitHub password: *(saved separately)*
 
 ---
 
-## How the Build Works
+## Publishing a blog post (via CMS)
 
-Eleventy reads source files and outputs everything to `_site/`. Vercel serves from `_site/`.
+This is the method the client uses. No code required.
 
-- **Blog posts** — Markdown files in `blog/posts/*.md` → output to `_site/blog/*.html`
-- **Blog index** — `blog/index.njk` → output to `_site/blog/index.html`
-- **Post layout** — `_layouts/post.njk` (shared template for all posts)
-- **Static pages** — `index.html`, `locations.html`, etc. — copied through unchanged
-- **Images** — `images/` — copied through unchanged
-
-To build locally:
-```bash
-npm install
-npx @11ty/eleventy
-```
-
-To run a local dev server with live reload:
-```bash
-npx @11ty/eleventy --serve
-```
+1. Go to `proball.com/admin`
+2. Sign in with GitHub using the `proball-cms` account
+3. Click **New Post** and fill in the fields:
+   - **Title** — the headline
+   - **Date** — publish date
+   - **Author / Author Title** — e.g. Ignacio Miranda / Head Coach
+   - **Category** — choose from: Coaching, Development, Mindset, News, Parenting & Sport, Performance, Training
+   - **Description** — 1–2 sentence summary (shown on blog cards and in Google)
+   - **Image** — upload a photo
+   - **Image Alt** — describe the photo for accessibility (e.g. "Coach demonstrating ball handling drill")
+   - **Image Position** — controls where the image is cropped (e.g. `center 30%` focuses on the top third)
+   - **CTA Heading / CTA Body** — the call-to-action box at the bottom of the post
+   - **Body** — the post content
+4. Click **Publish** — the site rebuilds automatically and the post is live within 30 seconds
 
 ---
 
-## Blog Post Structure
+## Publishing a blog post (manually)
 
-Each post is a Markdown file in `blog/posts/` with YAML frontmatter:
+Use this method if the CMS is unavailable or you need more control.
+
+1. Add the post image to the `images/` folder
+2. Create a new file in `blog/posts/` named `your-post-slug.md`
+3. Use this structure at the top of the file:
 
 ```markdown
 ---
@@ -59,127 +90,131 @@ ctaHeading: Your call-to-action heading
 ctaBody: Your call-to-action body text.
 ---
 
-<p>Post content as HTML...</p>
+<p>Post content goes here as HTML paragraphs.</p>
 ```
 
-**Categories:** Coaching, Development, Mindset, News, Parenting & Sport, Performance, Training
+4. Commit and push to `master` — Vercel deploys automatically
 
-**Image filenames** — store only the filename (e.g. `abc123.jpeg`), not the full path. Images are served from `/images/`.
-
-**Permalinks** are set automatically by `blog/posts/posts.json` — the slug matches the filename (e.g. `my-post.md` → `/blog/my-post.html`).
+**Note:** The filename becomes the URL slug. `my-post.md` → `/blog/my-post.html`
 
 ---
 
-## Adding a Blog Post Manually (without CMS)
+## Registration form & email notifications
 
-1. Add the image file to `images/`
-2. Create a new `.md` file in `blog/posts/` following the structure above
-3. Commit and push to `master` — Vercel deploys automatically
+The **How to Join** page has a registration form. When someone submits it, two emails are sent automatically:
 
----
+- **Notification email** → sent to `info@proball.com` with all the form details (athlete name, age, program, parent contact, etc.)
+- **Confirmation email** → sent to the parent/guardian who submitted, confirming their registration was received
 
-## CMS (Sveltia CMS)
+This is handled by `api/register.js` (a serverless function on Vercel) using **Resend** to send the emails.
 
-**URL:** `proball.vercel.app/admin` (or `proball.com/admin` once live)
+### Changing where notification emails go
 
-**Login:** Click "Sign In with GitHub" → use the `proball-cms` GitHub account
+If you need to change the email address that receives form submissions:
 
-**How it works:**
-- The client fills in the fields and writes the post in the editor
-- Clicking Publish creates a commit on `master` in GitHub
-- Vercel detects the commit and rebuilds the site automatically (~30 seconds)
-- The post is live
+1. Log in to Vercel → select the ProBall project
+2. Go to **Settings → Environment Variables**
+3. Find `NOTIFY_EMAIL` and update the value
+4. Click **Save**, then go to **Deployments** and click **Redeploy** on the latest deployment
 
-**CMS config file:** `admin/config.yml` — edit this to add/remove fields or change categories
+### Current limitation (dev only)
 
----
+Until `proball.com` is verified in Resend, confirmation emails to parents will not send. This is a restriction of Resend's free plan — it can only send to `info@proball.com` while using a test sender address. This will be resolved when the domain goes live (see [Switching to the proball.com domain](#switching-to-the-proballcom-domain)).
 
-## CMS Authentication (how it actually works)
-
-The CMS uses a serverless OAuth proxy hosted on Vercel:
-
-1. User clicks "Sign In with GitHub" on the CMS
-2. Request goes to `/api/auth` (Vercel serverless function) → redirects to GitHub
-3. GitHub redirects back to `/api/callback` with an auth code
-4. `/api/callback` exchanges the code for a token using the stored client secret
-5. Token is passed back to the CMS and the user is logged in
-
-**Serverless functions:** `api/auth.js` and `api/callback.js`
-
-**Environment variables in Vercel** (Settings → Environment Variables):
-- `GITHUB_CLIENT_ID` — the GitHub OAuth App client ID
-- `GITHUB_CLIENT_SECRET` — the GitHub OAuth App client secret
-
-**GitHub OAuth App settings** (github.com → Settings → Developer settings → OAuth Apps → ProBall CMS):
-- Homepage URL: `https://proball.vercel.app` (update to `https://proball.com` when live)
-- Callback URL: `https://proball.vercel.app/api/callback` (update to `https://proball.com/api/callback` when live)
+The notification email to `info@proball.com` works now.
 
 ---
 
-## Redirects
+## Changing environment variables
 
-All URL redirects are managed in `vercel.json`. To add a new redirect:
+Environment variables are secret settings stored in Vercel (not in the code). They include API keys and configuration values. Never put these in the code files directly.
+
+**Current variables:**
+
+| Variable | What it does |
+|---|---|
+| `RESEND_API_KEY` | Authenticates with Resend to send emails |
+| `NOTIFY_EMAIL` | The email address that receives form submissions |
+| `FROM_EMAIL` | The sender address on outgoing emails (set to `noreply@proball.com` once domain is live) |
+| `GITHUB_CLIENT_ID` | Allows the CMS to authenticate via GitHub |
+| `GITHUB_CLIENT_SECRET` | Secret key for the CMS GitHub authentication |
+
+**To update a variable:**
+1. Vercel → ProBall project → **Settings → Environment Variables**
+2. Click the variable → edit the value → Save
+3. Redeploy for changes to take effect
+
+---
+
+## Adding a URL redirect
+
+If a page moves or an old URL needs to point somewhere new, add a redirect in `vercel.json`:
 
 ```json
-{ "source": "/old-url", "destination": "/new-url.html", "permanent": true }
+{ "source": "/old-url", "destination": "/new-page.html", "permanent": true }
+```
+
+Add it inside the `"redirects": [ ... ]` array. Commit and push — takes effect on next deploy.
+
+---
+
+## Switching to the proball.com domain
+
+When the client is ready to go live on `proball.com`, follow these steps in order:
+
+1. **Add the domain in Vercel** → Project → Settings → Domains → Add `proball.com`
+2. **Update DNS records** at the domain registrar as instructed by Vercel
+3. **Update the GitHub OAuth App** so the CMS login still works:
+   - Go to github.com → Settings → Developer settings → OAuth Apps → ProBall CMS
+   - Homepage URL → `https://proball.com`
+   - Callback URL → `https://proball.com/api/callback`
+4. **Update the CMS config** → open `admin/config.yml` and change `base_url` to `https://proball.com`
+5. **Verify proball.com in Resend** so confirmation emails work:
+   - Log in to resend.com → Domains → Add Domain → enter `proball.com`
+   - Add the DNS records Resend provides (at the domain registrar)
+   - Wait for verification (usually a few minutes)
+6. **Add the FROM_EMAIL variable in Vercel** → set `FROM_EMAIL` to `noreply@proball.com`
+7. **Commit and push** the `admin/config.yml` change
+
+Once complete, both the notification and confirmation emails will work for all recipients.
+
+---
+
+## Running the site locally
+
+To preview the site on your own machine before pushing changes:
+
+```bash
+npm install
+npx @11ty/eleventy --serve
+```
+
+The site will be available at `http://localhost:8080`. It will reload automatically when you save a file.
+
+To build without serving:
+
+```bash
+npx @11ty/eleventy
 ```
 
 ---
 
-## Registration Form
+## Key files reference
 
-The How to Join page (`how-to-join.html`) has a live registration form that submits to `api/register.js`.
-
-On submission it sends two emails via Resend:
-- **Notification** to `info@proball.com` with all form fields
-- **Confirmation** to the parent/guardian who submitted
-
-**Environment variables in Vercel** (Settings → Environment Variables):
-- `RESEND_API_KEY` — Resend API key (from resend.com → API Keys)
-- `NOTIFY_EMAIL` — email that receives form submissions (currently `info@proball.com`)
-- `FROM_EMAIL` — the from address on outgoing emails (see domain note below)
-
-**Dev limitation:** Until `proball.com` is verified in Resend, the `FROM_EMAIL` defaults to `onboarding@resend.dev` which can only send to the Resend account email (`info@proball.com`). This means parent confirmation emails won't work until the domain is live.
-
----
-
-## Moving to the Real Domain (proball.com)
-
-When pointing `proball.com` to Vercel:
-
-1. Add the domain in Vercel → Project → Settings → Domains
-2. Update DNS records as instructed by Vercel
-3. Update the GitHub OAuth App:
-   - Homepage URL → `https://proball.com`
-   - Callback URL → `https://proball.com/api/callback`
-4. Update `admin/config.yml` line `base_url` → `https://proball.com`
-5. Verify `proball.com` in Resend → Domains → Add Domain → add the DNS records they provide
-6. Add `FROM_EMAIL` env var in Vercel → `noreply@proball.com`
-7. Commit and push
-
----
-
-## Handing Over the CMS to the Client
-
-The client needs:
-- URL: `proball.com/admin`
-- GitHub username: `proball-cms`
-- GitHub password: *(saved separately)*
-
-They never need to touch code, GitHub, or Vercel. Everything happens through the CMS editor.
-
----
-
-## Key Files
-
-| File | Purpose |
+| File | What it does |
 |---|---|
-| `.eleventy.js` | Eleventy config — filters, collections, passthrough copies |
-| `vercel.json` | Build command, output directory, redirects |
-| `admin/config.yml` | CMS field definitions and backend config |
-| `_layouts/post.njk` | Blog post HTML template |
-| `blog/index.njk` | Blog index page template |
-| `blog/posts/posts.json` | Sets layout and permalink for all posts |
-| `api/auth.js` | OAuth proxy — starts GitHub login |
-| `api/callback.js` | OAuth proxy — completes GitHub login |
-| `api/register.js` | Registration form handler — sends emails via Resend |
+| `how-to-join.html` | The How to Join page, including the registration form |
+| `index.html` | Homepage |
+| `locations.html` | Programs & Locations page |
+| `schedule.html` | Schedule page |
+| `team.html` | Our Team page |
+| `vercel.json` | Hosting config — build command, output folder, URL redirects |
+| `admin/config.yml` | CMS field definitions — edit to add/remove form fields or categories |
+| `_layouts/post.njk` | The HTML template used for every blog post |
+| `blog/index.njk` | The blog index page template |
+| `blog/posts/` | All blog post content files |
+| `images/` | All image files |
+| `api/auth.js` | Handles the CMS GitHub login (step 1) |
+| `api/callback.js` | Handles the CMS GitHub login (step 2) |
+| `api/register.js` | Handles registration form submissions and sends emails |
+| `.eleventy.js` | Build configuration for the static site generator |
