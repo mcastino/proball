@@ -143,6 +143,12 @@ The tracking codes are embedded directly in the `<head>` of every HTML page and 
 - Google: go to analytics.google.com and select the ProBall property
 - Meta: go to facebook.com/adsmanager → Events Manager → find Pixel `1842845596071300`
 
+**Form conversion tracking** is also set up. When someone successfully submits the registration form, two conversion events fire automatically:
+- Google Analytics records a `generate_lead` event (visible under Reports → Events)
+- Meta records a `Lead` event (visible in Events Manager)
+
+This allows ad campaigns to optimise toward registrations, not just page visits.
+
 **To update or replace a pixel ID**, search for the old ID across all `.html` files and `_layouts/post.njk` and replace it with the new one, then commit and push.
 
 ---
