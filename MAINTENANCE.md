@@ -143,6 +143,12 @@ The tracking codes are embedded directly in the `<head>` of every HTML page and 
 - Google: go to analytics.google.com and select the ProBall property
 - Meta: go to facebook.com/adsmanager → Events Manager → find Pixel `1842845596071300`
 
+**Every page load** automatically fires:
+- Google Analytics `page_view` event
+- Meta Pixel `PageView` event
+
+No extra code is needed for this — it happens by default when the pixel scripts load.
+
 **Form conversion tracking** is also set up. When someone successfully submits the registration form, two conversion events fire automatically:
 - Google Analytics records a `generate_lead` event (visible under Reports → Events)
 - Meta records a `Lead` event (visible in Events Manager)
