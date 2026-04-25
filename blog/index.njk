@@ -174,8 +174,8 @@ permalink: /blog/index.html
   {% set featuredPost = collections.posts[0] %}
 
   <!-- FEATURED POST -->
-  <section class="max-w-7xl mx-auto px-6 pt-xl pb-lg">
-    <h2 class="font-label-lg text-label-lg text-slate-400 uppercase tracking-wider mb-6">Latest Post</h2>
+  <section class="max-w-7xl mx-auto px-6 pt-lg pb-md">
+    <h2 class="font-label-lg text-label-lg text-slate-400 uppercase tracking-wider mb-4">Latest Post</h2>
 
     {% if featuredPost.data.category in ["Coaching", "News", "Parenting & Sport", "Mindset"] %}
       {% set featuredBadgeClass = "bg-primary text-on-primary" %}
@@ -186,7 +186,7 @@ permalink: /blog/index.html
     <a href="{{ featuredPost.url }}"
        class="post-card block rounded-2xl overflow-hidden bg-white shadow-md border border-slate-100 group">
       <div class="grid grid-cols-1 md:grid-cols-2">
-        <div class="relative h-64 md:h-auto overflow-hidden">
+        <div class="relative h-48 md:h-64 overflow-hidden">
           <div class="absolute inset-0 bg-gradient-to-br from-slate-900/40 to-transparent z-10"></div>
           <img
             src="/images/{{ featuredPost.data.image }}"
@@ -198,7 +198,7 @@ permalink: /blog/index.html
             {{ featuredPost.data.category }}
           </span>
         </div>
-        <div class="p-8 md:p-10 flex flex-col justify-center">
+        <div class="p-6 md:p-8 flex flex-col justify-center">
           <p class="font-label-lg text-label-lg text-slate-400 uppercase tracking-wider mb-3">{{ featuredPost.date | readableDate }}</p>
           <h3 class="font-headline-lg text-headline-lg text-on-background mb-4 group-hover:text-primary transition-colors">
             {{ featuredPost.data.title }}
