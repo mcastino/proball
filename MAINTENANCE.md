@@ -11,11 +11,12 @@ This document explains how the ProBall website works, how to make common changes
 3. [Publishing a blog post (via CMS)](#publishing-a-blog-post-via-cms)
 4. [Publishing a blog post (manually)](#publishing-a-blog-post-manually)
 5. [Registration form & email notifications](#registration-form--email-notifications)
-6. [Changing environment variables](#changing-environment-variables)
-7. [Adding a URL redirect](#adding-a-url-redirect)
-8. [Switching to the proball.com domain](#switching-to-the-proballcom-domain)
-9. [Running the site locally](#running-the-site-locally)
-10. [Key files reference](#key-files-reference)
+6. [Analytics & ad tracking](#analytics--ad-tracking)
+7. [Changing environment variables](#changing-environment-variables)
+8. [Adding a URL redirect](#adding-a-url-redirect)
+9. [Switching to the proball.com domain](#switching-to-the-proballcom-domain)
+10. [Running the site locally](#running-the-site-locally)
+11. [Key files reference](#key-files-reference)
 
 ---
 
@@ -36,6 +37,8 @@ The website is a collection of HTML files stored in a GitHub repository. When a 
 | **Vercel** | Hosts the website | vercel.com — mcastino account |
 | **GitHub** | Stores the code | github.com/mcastino/proball |
 | **Resend** | Sends emails from the registration form | resend.com — sign in with GitHub |
+| **Google Analytics** | Tracks website traffic and user behaviour | analytics.google.com — Property ID: `G-2QY638K759` |
+| **Meta Ads Manager** | Tracks Facebook/Instagram ad performance | facebook.com/adsmanager — Pixel ID: `1842845596071300` |
 | **GitHub OAuth App** | Allows the CMS to log in via GitHub | github.com → Settings → Developer settings → OAuth Apps → "ProBall CMS" |
 
 **Client CMS login:**
@@ -122,6 +125,25 @@ If you need to change the email address that receives form submissions:
 Until `proball.com` is verified in Resend, confirmation emails to parents will not send. This is a restriction of Resend's free plan — it can only send to `info@proball.com` while using a test sender address. This will be resolved when the domain goes live (see [Switching to the proball.com domain](#switching-to-the-proballcom-domain)).
 
 The notification email to `info@proball.com` works now.
+
+---
+
+## Analytics & ad tracking
+
+Both Google Analytics and the Meta (Facebook) Pixel are installed on every page of the site. They were migrated directly from the existing proball.com website so ad audiences and historical data carry over when the domain switches.
+
+| Tool | ID | What it tracks |
+|---|---|---|
+| **Google Analytics (GA4)** | `G-2QY638K759` | Page views, traffic sources, user behaviour |
+| **Meta Pixel** | `1842845596071300` | Facebook/Instagram ad conversions and retargeting audiences |
+
+The tracking codes are embedded directly in the `<head>` of every HTML page and the blog post layout (`_layouts/post.njk`). No third-party plugin or tag manager is used — they fire on every page load automatically.
+
+**To view analytics:**
+- Google: go to analytics.google.com and select the ProBall property
+- Meta: go to facebook.com/adsmanager → Events Manager → find Pixel `1842845596071300`
+
+**To update or replace a pixel ID**, search for the old ID across all `.html` files and `_layouts/post.njk` and replace it with the new one, then commit and push.
 
 ---
 
