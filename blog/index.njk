@@ -186,12 +186,12 @@ permalink: /blog/index.html
     <a href="{{ featuredPost.url }}"
        class="post-card block rounded-2xl overflow-hidden bg-white shadow-md border border-slate-100 group">
       <div class="grid grid-cols-1 md:grid-cols-2">
-        <div class="relative overflow-hidden">
+        <div class="relative min-h-64 overflow-hidden">
           <div class="absolute inset-0 bg-gradient-to-br from-slate-900/40 to-transparent z-10"></div>
           <img
             src="{{ featuredPost.data.image if featuredPost.data.image[0] == '/' else '/images/' + featuredPost.data.image }}"
             alt="{{ featuredPost.data.imageAlt }}"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             style="object-position: {{ featuredPost.data.imagePosition }}"
           />
           <span class="absolute top-4 left-4 z-20 {{ featuredBadgeClass }} font-label-lg text-label-lg uppercase rounded-full px-3 py-0.5">
