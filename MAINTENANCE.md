@@ -32,11 +32,13 @@ The website is a collection of HTML files stored in a GitHub repository. When a 
 
 ## Accounts & logins
 
+> **One login for everything:** Vercel, Resend, and GitHub all use the `proball-cms` GitHub account. Log into GitHub first and the others will follow.
+
 | Service | What it's for | How to log in |
 |---|---|---|
-| **Vercel** | Hosts the website | vercel.com — proball-cms account |
+| **Vercel** | Hosts the website | vercel.com — sign in with GitHub (`proball-cms`) |
 | **GitHub** | Stores the code | github.com/proball-cms/proball |
-| **Resend** | Sends emails from the registration form | resend.com — sign in with GitHub |
+| **Resend** | Sends emails from the registration form | resend.com — sign in with GitHub (`proball-cms`) |
 | **Google Analytics** | Tracks website traffic and user behaviour | analytics.google.com — Property ID: `G-2QY638K759` |
 | **Meta Ads Manager** | Tracks Facebook/Instagram ad performance | facebook.com/adsmanager — Pixel ID: `1842845596071300` |
 | **GitHub OAuth App** | Allows the CMS to log in via GitHub | github.com — proball-cms account → Settings → Developer settings → OAuth Apps → "ProBall CMS" |
