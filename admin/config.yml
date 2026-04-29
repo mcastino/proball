@@ -2,7 +2,7 @@ backend:
   name: github
   repo: proball-cms/proball
   branch: master
-  base_url: https://proball.vercel.app
+  base_url: https://proball-green.vercel.app
   auth_endpoint: api/auth
 
 media_folder: images
