@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Kids Basketball Leichhardt | ProBall Sydney</title>
-  <meta name="description" content="Basketball classes for kids in Leichhardt, Sydney. ProBall Academy &amp; Miniball at Sydney Secondary College, Inner West. Ages 5–13, all levels welcome. Book a free trial."/>
+  <title>{{ metaTitle }}</title>
+  <meta name="description" content="{{ metaDescription }}"/>
   <meta name="robots" content="noindex, nofollow"/>
-  <link rel="canonical" href="https://proball.com/locations/leichhardt.html"/>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"ProBall Basketball – Leichhardt","parentOrganization":{"@type":"Organization","name":"ProBall"},"sport":"Basketball","address":{"@type":"PostalAddress","streetAddress":"Sydney Secondary College Leichhardt","addressLocality":"Leichhardt","addressRegion":"NSW","addressCountry":"AU"},"telephone":"0406974582","url":"https://proball.com/locations/leichhardt.html"}</script>
+  <link rel="canonical" href="https://proball.com/locations/{{ page.fileSlug }}.html"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"{{ schemaName }}","parentOrganization":{"@type":"Organization","name":"ProBall"},"sport":"Basketball","address":{"@type":"PostalAddress","streetAddress":"{{ schemaStreet }}","addressLocality":"{{ schemaLocality }}","addressRegion":"NSW","addressCountry":"AU"},"telephone":"0406974582","url":"https://proball.com/locations/{{ page.fileSlug }}.html"}</script>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -38,27 +38,27 @@
 
 <header class="bg-white border-b-2 border-slate-100 shadow-sm sticky top-0 z-50">
   <nav class="flex justify-between items-center w-full px-6 py-3 max-w-7xl mx-auto">
-    <a href="../index.html" class="flex-shrink-0"><img src="https://ik.imagekit.io/xckefgqnh/wp-content/uploads/2025/04/ProBall_Logo.jpg" alt="ProBall" class="h-12 w-auto object-contain"/></a>
+    <a href="/index.html" class="flex-shrink-0"><img src="https://ik.imagekit.io/xckefgqnh/wp-content/uploads/2025/04/ProBall_Logo.jpg" alt="ProBall" class="h-12 w-auto object-contain"/></a>
     <div class="hidden md:flex items-center space-x-8">
-      <a href="../index.html" class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Home</a>
-      <a href="../locations.html" class="text-primary font-bold border-b-2 border-primary pb-0.5">Programs &amp; Locations</a>
-      <a href="../schedule.html" class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Schedule</a>
-      <a href="../team.html" class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Our Team</a>
-      <a href="../blog/index.html" class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Blog</a>
-      <a href="../how-to-join.html" class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">How to Join</a>
+      <a href="/index.html" class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Home</a>
+      <a href="/locations.html" class="text-primary font-bold border-b-2 border-primary pb-0.5">Programs &amp; Locations</a>
+      <a href="/schedule.html" class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Schedule</a>
+      <a href="/team.html" class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Our Team</a>
+      <a href="/blog/index.html" class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">Blog</a>
+      <a href="/how-to-join.html" class="text-slate-600 font-medium hover:text-primary transition-colors duration-200">How to Join</a>
     </div>
     <div class="flex items-center gap-sm">
-      <a href="../how-to-join.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-button text-button hover:scale-105 active:scale-95 transition-all shadow-sm">Book a Free Trial</a>
+      <a href="/how-to-join.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-button text-button hover:scale-105 active:scale-95 transition-all shadow-sm">Book a Free Trial</a>
       <button id="nav-toggle" class="md:hidden p-2 text-slate-600 hover:text-primary transition-colors" aria-label="Open menu"><span class="material-symbols-outlined">menu</span></button>
     </div>
   </nav>
   <div id="mobile-menu" class="md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-4">
-    <a href="../index.html" class="block text-slate-600 font-medium hover:text-primary">Home</a>
-    <a href="../locations.html" class="block text-primary font-bold">Programs &amp; Locations</a>
-    <a href="../schedule.html" class="block text-slate-600 font-medium hover:text-primary">Schedule</a>
-    <a href="../team.html" class="block text-slate-600 font-medium hover:text-primary">Our Team</a>
-    <a href="../blog/index.html" class="block text-slate-600 font-medium hover:text-primary">Blog</a>
-    <a href="../how-to-join.html" class="block text-slate-600 font-medium hover:text-primary">How to Join</a>
+    <a href="/index.html" class="block text-slate-600 font-medium hover:text-primary">Home</a>
+    <a href="/locations.html" class="block text-primary font-bold">Programs &amp; Locations</a>
+    <a href="/schedule.html" class="block text-slate-600 font-medium hover:text-primary">Schedule</a>
+    <a href="/team.html" class="block text-slate-600 font-medium hover:text-primary">Our Team</a>
+    <a href="/blog/index.html" class="block text-slate-600 font-medium hover:text-primary">Blog</a>
+    <a href="/how-to-join.html" class="block text-slate-600 font-medium hover:text-primary">How to Join</a>
   </div>
 </header>
 
@@ -67,13 +67,17 @@
   <!-- HERO -->
   <section class="relative h-56 md:h-72 flex items-end overflow-hidden bg-slate-900">
     <div class="absolute inset-0 z-0">
+      {% if heroImage %}
       <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20 z-10"></div>
-      <img src="../images/8fe6d99b-5ca2-4d4b-aa63-39b328d21b52.jpeg" alt="ProBall basketball class at Sydney Secondary College Leichhardt" class="w-full h-full object-cover"/>
+      <img src="/images/{{ heroImage }}" alt="{{ heroImageAlt }}" class="w-full h-full object-cover"/>
+      {% else %}
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-slate-700 z-0"></div>
+      {% endif %}
     </div>
     <div class="relative z-20 max-w-7xl mx-auto px-6 w-full pb-10">
-      <a href="../locations.html" class="inline-flex items-center gap-1 text-white/60 text-xs hover:text-white mb-4 transition-colors"><span class="material-symbols-outlined text-sm">arrow_back</span> All Locations</a>
-      <span class="inline-block bg-primary text-white text-xs font-semibold uppercase tracking-wider rounded-full px-3 py-0.5 mb-3">Inner West</span>
-      <h1 class="font-headline-lg text-headline-lg text-white max-w-3xl leading-tight">Basketball Classes for Kids in Leichhardt</h1>
+      <a href="/locations.html" class="inline-flex items-center gap-1 text-white/60 text-xs hover:text-white mb-4 transition-colors"><span class="material-symbols-outlined text-sm">arrow_back</span> All Locations</a>
+      <span class="inline-block bg-primary text-white text-xs font-semibold uppercase tracking-wider rounded-full px-3 py-0.5 mb-3">{{ region }}</span>
+      <h1 class="font-headline-lg text-headline-lg text-white max-w-3xl leading-tight">Basketball Classes for Kids in {{ title }}</h1>
     </div>
   </section>
 
@@ -86,9 +90,13 @@
         <!-- About -->
         <section>
           <h2 class="font-headline-md text-headline-md mb-4">About the Program</h2>
-          <p class="font-body-lg text-body-lg text-tertiary mb-4">ProBall Leichhardt runs at Sydney Secondary College in the Inner West — one of our most established venues. We offer both <strong>Academy</strong> skills training and <strong>Miniball</strong> games, making it the most complete ProBall experience available in one location.</p>
-          <p class="font-body-md text-body-md text-tertiary mb-4">Families from Leichhardt, Annandale, Lilyfield and across the Inner West choose this venue for its convenient Saturday Miniball sessions and weekday Academy classes. Whether your child is picking up a ball for the first time or working towards representative basketball, there's a program for them here.</p>
-          <p class="font-body-md text-body-md text-tertiary">ProBall Leichhardt has been running longer than any other ProBall venue and is the original home of our Miniball program in Sydney.</p>
+          {% for para in aboutParagraphs %}
+            {% if loop.first %}
+              <p class="font-body-lg text-body-lg text-tertiary mb-4">{{ para | markdown | safe }}</p>
+            {% else %}
+              <p class="font-body-md text-body-md text-tertiary mb-4">{{ para | markdown | safe }}</p>
+            {% endif %}
+          {% endfor %}
         </section>
 
         <!-- Location & Sessions -->
@@ -98,35 +106,40 @@
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-primary mt-0.5">location_on</span>
               <div>
-                <p class="font-body-md text-body-md font-semibold">Sydney Secondary College Leichhardt</p>
-                <p class="font-body-md text-body-md text-tertiary">Inner West, Sydney NSW</p>
-                <a href="https://maps.google.com/?q=Sydney+Secondary+College+Leichhardt+NSW" target="_blank" rel="noopener" class="text-primary text-sm hover:underline mt-1 inline-block">Get directions →</a>
+                <p class="font-body-md text-body-md font-semibold">{{ venueAddress }}</p>
+                <p class="font-body-md text-body-md text-tertiary">{{ venueCity }}</p>
+                <a href="{{ mapsUrl }}" target="_blank" rel="noopener" class="text-primary text-sm hover:underline mt-1 inline-block">Get directions →</a>
               </div>
             </div>
+            {% if 'miniball' in programs %}
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-primary mt-0.5">schedule</span>
               <div>
-                <p class="font-body-md text-body-md font-semibold">Miniball — Saturdays 9:00am–11:00am</p>
-                <p class="font-body-md text-body-md text-tertiary">School terms only · Ages 5–7 &amp; 8–10 groups</p>
+                <p class="font-body-md text-body-md font-semibold">Miniball — {{ miniballSchedule }}</p>
+                <p class="font-body-md text-body-md text-tertiary">School terms only · {{ miniballAges }}</p>
               </div>
             </div>
+            {% endif %}
+            {% if 'academy' in programs %}
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-primary mt-0.5">school</span>
               <div>
-                <p class="font-body-md text-body-md font-semibold">Academy — weekdays &amp; weekends</p>
-                <p class="font-body-md text-body-md text-tertiary">Ages 5+ · All levels welcome</p>
+                <p class="font-body-md text-body-md font-semibold">Academy — {{ academySchedule }}</p>
+                <p class="font-body-md text-body-md text-tertiary">{{ academyAges }}</p>
               </div>
             </div>
+            {% endif %}
           </div>
         </section>
 
-        <!-- Programs -->
+        <!-- Programs at this venue -->
         <section>
           <h2 class="font-headline-md text-headline-md mb-4">Programs at This Venue</h2>
+          {% if 'miniball' in programs and 'academy' in programs %}
           <div class="grid md:grid-cols-2 gap-gutter">
             <div class="bg-white rounded-xl shadow-sm border-l-4 border-primary p-6">
               <h3 class="font-headline-md text-headline-md mb-2">Miniball</h3>
-              <p class="font-label-lg text-label-lg text-secondary uppercase mb-3">Ages 5–10 · Weekends</p>
+              <p class="font-label-lg text-label-lg text-secondary uppercase mb-3">Ages 5–10 · {{ miniballSchedule | replace("·", "·") | truncate(20, true, "") }}s</p>
               <p class="font-body-md text-body-md text-tertiary">Weekly 40-minute modified games during school terms. No scorekeeping, no pressure — just fun basketball with friends. First 4 weeks are free for new members.</p>
             </div>
             <div class="bg-white rounded-xl shadow-sm border-l-4 border-secondary p-6">
@@ -135,46 +148,42 @@
               <p class="font-body-md text-body-md text-tertiary">Structured skills sessions with nationally certified coaches. Six specialised class types covering shooting, ball handling, 1v1, game strategy and more.</p>
             </div>
           </div>
+          {% elif 'miniball' in programs %}
+          <div class="bg-white rounded-xl shadow-sm border-l-4 border-primary p-6 max-w-md">
+            <h3 class="font-headline-md text-headline-md mb-2">Miniball</h3>
+            <p class="font-label-lg text-label-lg text-secondary uppercase mb-3">Ages 5–10 · Weekends</p>
+            <p class="font-body-md text-body-md text-tertiary">Weekly 40-minute modified games during school terms. No scorekeeping, no pressure. First 4 weeks free for new members.</p>
+          </div>
+          {% else %}
+          <div class="bg-white rounded-xl shadow-sm border-l-4 border-secondary p-6 max-w-md">
+            <h3 class="font-headline-md text-headline-md mb-2">Academy</h3>
+            <p class="font-label-lg text-label-lg text-secondary uppercase mb-3">Ages 5+ · 7 days a week</p>
+            <p class="font-body-md text-body-md text-tertiary">Structured skills training with nationally certified coaches. Six specialised class types covering every aspect of the game, from shooting and ball handling to team strategy and 1v1 play.</p>
+          </div>
+          {% endif %}
         </section>
 
         <!-- Why families choose -->
         <section>
-          <h2 class="font-headline-md text-headline-md mb-4">Why Families Choose ProBall Leichhardt</h2>
+          <h2 class="font-headline-md text-headline-md mb-4">Why Families Choose ProBall {{ title }}</h2>
           <ul class="space-y-3">
+            {% for item in whyChoose %}
             <li class="flex items-start gap-3">
               <span class="material-symbols-outlined text-primary mt-0.5 flex-shrink-0">check_circle</span>
-              <p class="font-body-md text-body-md text-tertiary">Both Miniball and Academy at one venue — easy for families with kids at different stages</p>
+              <p class="font-body-md text-body-md text-tertiary">{{ item }}</p>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary mt-0.5 flex-shrink-0">check_circle</span>
-              <p class="font-body-md text-body-md text-tertiary">Nationally certified coaches with years of experience developing Inner West junior players</p>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary mt-0.5 flex-shrink-0">check_circle</span>
-              <p class="font-body-md text-body-md text-tertiary">No lock-in contracts — monthly membership, cancel any time</p>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary mt-0.5 flex-shrink-0">check_circle</span>
-              <p class="font-body-md text-body-md text-tertiary">Convenient Saturday morning timeslot — fits around weekends without disrupting the week</p>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary mt-0.5 flex-shrink-0">check_circle</span>
-              <p class="font-body-md text-body-md text-tertiary">ProBall membership gives access to all 7 Sydney venues — not just Leichhardt</p>
-            </li>
+            {% endfor %}
           </ul>
         </section>
 
-        <!-- Serving suburbs -->
+        <!-- Nearby suburbs -->
         <section class="bg-primary-fixed rounded-xl p-6">
-          <h2 class="font-headline-md text-headline-md mb-3">Serving the Inner West</h2>
-          <p class="font-body-md text-body-md text-tertiary mb-3">This venue is the closest ProBall location for families in:</p>
+          <h2 class="font-headline-md text-headline-md mb-3">{{ nearbySuburbsHeading }}</h2>
+          <p class="font-body-md text-body-md text-tertiary mb-3">{{ nearbySuburbsIntro }}</p>
           <div class="flex flex-wrap gap-2">
-            <span class="bg-white text-on-background px-3 py-1 rounded-full text-sm font-medium">Leichhardt</span>
-            <span class="bg-white text-on-background px-3 py-1 rounded-full text-sm font-medium">Annandale</span>
-            <span class="bg-white text-on-background px-3 py-1 rounded-full text-sm font-medium">Lilyfield</span>
-            <span class="bg-white text-on-background px-3 py-1 rounded-full text-sm font-medium">Rozelle</span>
-            <span class="bg-white text-on-background px-3 py-1 rounded-full text-sm font-medium">Balmain</span>
-            <span class="bg-white text-on-background px-3 py-1 rounded-full text-sm font-medium">Haberfield</span>
+            {% for suburb in nearbySuburbs %}
+            <span class="bg-white text-on-background px-3 py-1 rounded-full text-sm font-medium">{{ suburb }}</span>
+            {% endfor %}
           </div>
         </section>
 
@@ -185,18 +194,17 @@
         <div class="bg-primary rounded-2xl p-6 text-white text-center">
           <span class="material-symbols-outlined text-3xl mb-3 block">sports_basketball</span>
           <h3 class="font-headline-md text-headline-md mb-2">Book a Free Trial</h3>
-          <p class="text-white/80 text-sm mb-4">Come and try ProBall at Leichhardt. First 4 weeks of Miniball are completely free for new members.</p>
-          <a href="../how-to-join.html" class="inline-block bg-white text-primary px-6 py-2.5 rounded-full font-button text-button hover:scale-105 transition-all">Get Started</a>
+          <p class="text-white/80 text-sm mb-4">{{ sidebarTrialText }}</p>
+          <a href="/how-to-join.html" class="inline-block bg-white text-primary px-6 py-2.5 rounded-full font-button text-button hover:scale-105 transition-all">Get Started</a>
         </div>
         <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
           <h3 class="font-label-lg text-label-lg text-slate-400 uppercase tracking-wider mb-4">Other Locations</h3>
           <div class="space-y-3">
-            <a href="green-square.html" class="block text-sm font-medium text-on-background hover:text-primary transition-colors">Green Square (Zetland) →</a>
-            <a href="marrickville.html" class="block text-sm font-medium text-on-background hover:text-primary transition-colors">Marrickville →</a>
-            <a href="maroubra.html" class="block text-sm font-medium text-on-background hover:text-primary transition-colors">Maroubra →</a>
-            <a href="surry-hills.html" class="block text-sm font-medium text-on-background hover:text-primary transition-colors">Surry Hills →</a>
-            <a href="south-sydney.html" class="block text-sm font-medium text-on-background hover:text-primary transition-colors">South Sydney →</a>
-            <a href="eastern-suburbs.html" class="block text-sm font-medium text-on-background hover:text-primary transition-colors">Eastern Suburbs →</a>
+            {% for loc in collections.locations | sort(false, false, 'data.order') %}
+              {% if loc.url !== page.url %}
+              <a href="{{ loc.url }}" class="block text-sm font-medium text-on-background hover:text-primary transition-colors">{{ loc.data.title }} ({{ loc.data.region }}) →</a>
+              {% endif %}
+            {% endfor %}
           </div>
         </div>
         <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
@@ -225,11 +233,11 @@
       <div>
         <h5 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Quick Links</h5>
         <ul class="space-y-4">
-          <li><a href="../locations.html" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Programs &amp; Locations</a></li>
-          <li><a href="../schedule.html" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Schedule</a></li>
-          <li><a href="../blog/index.html" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Blog</a></li>
-          <li><a href="../how-to-join.html" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">How to Join</a></li>
-          <li><a href="../team.html" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Our Team</a></li>
+          <li><a href="/locations.html" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Programs &amp; Locations</a></li>
+          <li><a href="/schedule.html" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Schedule</a></li>
+          <li><a href="/blog/index.html" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Blog</a></li>
+          <li><a href="/how-to-join.html" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">How to Join</a></li>
+          <li><a href="/team.html" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Our Team</a></li>
         </ul>
       </div>
       <div>
@@ -237,7 +245,7 @@
         <ul class="space-y-4">
           <li><a href="tel:0406974582" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">0406 974 582</a></li>
           <li><a href="mailto:info@proball.com" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">info@proball.com</a></li>
-          <li><a href="../terms.html" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Terms &amp; Conditions</a></li>
+          <li><a href="/terms.html" class="font-body-md text-sm text-slate-400 hover:text-primary transition-colors">Terms &amp; Conditions</a></li>
         </ul>
       </div>
     </div>
@@ -255,10 +263,6 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('nav-toggle').addEventListener('click', function () {
-    document.getElementById('mobile-menu').classList.toggle('open');
-  });
-</script>
+<script>document.getElementById('nav-toggle').addEventListener('click',function(){document.getElementById('mobile-menu').classList.toggle('open');});</script>
 </body>
 </html>

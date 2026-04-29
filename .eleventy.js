@@ -1,17 +1,16 @@
 const { DateTime } = require("luxon");
+const markdownIt = require("markdown-it");
+const md = markdownIt({ html: true, breaks: false, linkify: false });
 
 module.exports = function(eleventyConfig) {
 
   // Pass static files through unchanged
   eleventyConfig.addPassthroughCopy("index.html");
-  eleventyConfig.addPassthroughCopy("locations.html");
   eleventyConfig.addPassthroughCopy("how-to-join.html");
   eleventyConfig.addPassthroughCopy("schedule.html");
-  eleventyConfig.addPassthroughCopy("team.html");
   eleventyConfig.addPassthroughCopy("terms.html");
   eleventyConfig.addPassthroughCopy("sitemap.xml");
   eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("locations");
   eleventyConfig.addPassthroughCopy("admin");
 
   // Date filters
@@ -21,6 +20,12 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("isoDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toISODate();
+  });
+
+  // Render markdown string from frontmatter
+  eleventyConfig.addFilter("markdown", (content) => {
+    if (!content) return "";
+    return md.render(String(content));
   });
 
   // Collection helpers
@@ -35,6 +40,28 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("posts", (collectionApi) => {
     return collectionApi.getFilteredByTag("posts")
       .sort((a, b) => b.date - a.date);
+  });
+
+  eleventyConfig.addCollection("locations", (collectionApi) => {
+    return collectionApi.getFilteredByTag("locations")
+      .sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
+  });
+
+  eleventyConfig.addCollection("miniballLocations", (collectionApi) => {
+    return collectionApi.getFilteredByTag("locations")
+      .filter(loc => loc.data.programs && loc.data.programs.includes("miniball"))
+      .sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
+  });
+
+  eleventyConfig.addCollection("academyLocations", (collectionApi) => {
+    return collectionApi.getFilteredByTag("locations")
+      .filter(loc => loc.data.programs && loc.data.programs.includes("academy"))
+      .sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
+  });
+
+  eleventyConfig.addCollection("team", (collectionApi) => {
+    return collectionApi.getFilteredByTag("team")
+      .sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
   });
 
   return {

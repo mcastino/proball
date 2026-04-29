@@ -39,3 +39,115 @@ collections:
       - { label: CTA Heading, name: ctaHeading, widget: string }
       - { label: CTA Body, name: ctaBody, widget: string }
       - { label: Body, name: body, widget: markdown }
+
+  - name: locations
+    label: Locations
+    folder: _locations
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string, hint: "Venue name, e.g. Leichhardt" }
+      - { label: Order, name: order, widget: number, default: 99, hint: "Display order — lower numbers appear first" }
+      - label: Programs
+        name: programs
+        widget: select
+        multiple: true
+        options:
+          - { label: Miniball, value: miniball }
+          - { label: Academy, value: academy }
+      - { label: Region, name: region, widget: string, hint: "e.g. Inner West" }
+      - { label: Venue Address, name: venueAddress, widget: string, hint: "Street address or venue name" }
+      - { label: Venue City, name: venueCity, widget: string, hint: "e.g. Inner West, Sydney NSW", default: "Sydney NSW" }
+      - { label: Google Maps URL, name: mapsUrl, widget: string, hint: "Full Google Maps link for this venue" }
+      - { label: Hero Image, name: heroImage, widget: image, required: false, hint: "Upload venue photo. Only filename stored." }
+      - { label: Hero Image Alt Text, name: heroImageAlt, widget: string, required: false }
+      - { label: Miniball Schedule, name: miniballSchedule, widget: string, required: false, hint: "e.g. Saturdays · 9:00am – 11:00am" }
+      - { label: Miniball Ages, name: miniballAges, widget: string, required: false, hint: "e.g. Ages 5–7 & 8–10 groups" }
+      - { label: Academy Schedule, name: academySchedule, widget: string, required: false, hint: "e.g. Weekdays & weekends" }
+      - { label: Academy Ages, name: academyAges, widget: string, required: false, hint: "e.g. Ages 5+, all levels welcome" }
+      - label: About Paragraphs
+        name: aboutParagraphs
+        widget: list
+        field: { label: Paragraph, name: para, widget: markdown }
+        hint: "2–3 paragraphs about this venue. Supports bold/italic."
+      - label: Why Choose This Venue
+        name: whyChoose
+        widget: list
+        field: { label: Point, name: point, widget: string }
+        hint: "4–6 short bullet points (no markdown needed)"
+      - { label: Nearby Suburbs Heading, name: nearbySuburbsHeading, widget: string, required: false, hint: "e.g. Serving the Inner West" }
+      - { label: Nearby Suburbs Intro, name: nearbySuburbsIntro, widget: string, required: false }
+      - label: Nearby Suburbs
+        name: nearbySuburbs
+        widget: list
+        field: { label: Suburb, name: suburb, widget: string }
+      - { label: Meta Title, name: metaTitle, widget: string, required: false }
+      - { label: Meta Description, name: metaDescription, widget: string, required: false }
+      - { label: Schema Name, name: schemaName, widget: string, required: false, hint: "e.g. ProBall Basketball – Leichhardt" }
+      - { label: Schema Street, name: schemaStreet, widget: string, required: false }
+      - { label: Schema Locality, name: schemaLocality, widget: string, required: false }
+      - { label: Sidebar Trial Text, name: sidebarTrialText, widget: string, required: false }
+      - { label: Layout, name: layout, widget: hidden, default: location }
+      - { label: Tags, name: tags, widget: hidden, default: locations }
+      - { label: Permalink, name: permalink, widget: string, hint: "e.g. /locations/leichhardt.html" }
+
+  - name: team
+    label: Team Members
+    folder: _team
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Role, name: role, widget: string, hint: "e.g. Coaching Director" }
+      - { label: Order, name: order, widget: number, default: 99, hint: "Display order — lower numbers appear first" }
+      - label: Role Colour
+        name: roleColor
+        widget: select
+        options:
+          - { label: Red (primary), value: primary }
+          - { label: Blue (secondary), value: secondary }
+      - label: Credential Colour
+        name: credentialColor
+        widget: select
+        options:
+          - { label: Red (primary), value: primary }
+          - { label: Blue (secondary), value: secondary }
+      - { label: Photo, name: photo, widget: image, required: false, hint: "Upload headshot. Only filename stored." }
+      - label: Photo Background
+        name: photoBg
+        widget: select
+        options:
+          - { label: Dark slate, value: bg-slate-900 }
+          - { label: Medium slate, value: bg-slate-800 }
+          - { label: Blue (secondary), value: bg-secondary }
+          - { label: Red (primary), value: bg-primary }
+      - label: Photo Opacity
+        name: photoOpacity
+        widget: select
+        options:
+          - { label: "40%", value: opacity-40 }
+          - { label: "50%", value: opacity-50 }
+          - { label: "60%", value: opacity-60 }
+          - { label: "70%", value: opacity-70 }
+          - { label: "80%", value: opacity-80 }
+      - label: Photo Object Position
+        name: photoObjectPosition
+        widget: select
+        options:
+          - { label: Top, value: object-top }
+          - { label: Center, value: object-center }
+          - { label: Bottom, value: object-bottom }
+        default: object-top
+      - { label: LinkedIn URL, name: linkedinUrl, widget: string, required: false, hint: "Full LinkedIn profile URL, or leave blank" }
+      - label: Credentials
+        name: credentials
+        widget: list
+        field: { label: Credential, name: credential, widget: string }
+        hint: "3–5 short credential lines, e.g. NCAS Level 3"
+      - { label: Bio (Main), name: bioMain, widget: markdown, hint: "Primary bio paragraph. Supports **bold**." }
+      - { label: Bio (Secondary), name: bioSub, widget: markdown, hint: "Second bio paragraph." }
+      - { label: Tags, name: tags, widget: hidden, default: team }
