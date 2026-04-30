@@ -39,5 +39,4 @@ schemaLocality: Centennial Park
 sidebarTrialText: Try ProBall Academy at Centennial Parklands.
 layout: location
 tags: locations
-permalink: /locations/eastern-suburbs.html
 ---

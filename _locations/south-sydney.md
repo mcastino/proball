@@ -1,6 +1,5 @@
 ---
 title: South Sydney
-permalink: /locations/south-sydney.html
 region: South Sydney
 venueAddress: South Sydney High School
 venueCity: Maroubra, Sydney NSW

@@ -1,6 +1,5 @@
 ---
 title: Marrickville
-permalink: /locations/marrickville.html
 region: Inner West
 venueAddress: Wilkins Public School
 venueCity: Marrickville, Sydney NSW

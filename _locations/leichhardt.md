@@ -1,6 +1,5 @@
 ---
 title: Leichhardt
-permalink: /locations/leichhardt.html
 region: Inner West
 venueAddress: Sydney Secondary College Leichhardt
 venueCity: Inner West, Sydney NSW

@@ -1,6 +1,5 @@
 ---
 title: Surry Hills
-permalink: /locations/surry-hills.html
 region: Inner Sydney
 venueAddress: Inner Sydney High School
 venueCity: Surry Hills, Sydney NSW

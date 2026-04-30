@@ -1,6 +1,5 @@
 ---
 title: Maroubra
-permalink: /locations/maroubra.html
 region: South Sydney
 venueAddress: Heffron Centre
 venueCity: Maroubra, Sydney NSW

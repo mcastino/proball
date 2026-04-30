@@ -1,6 +1,5 @@
 ---
 title: Green Square
-permalink: /locations/green-square.html
 region: South Sydney
 venueAddress: Green Square Public School
 venueCity: Zetland, Sydney NSW

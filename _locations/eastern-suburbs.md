@@ -1,6 +1,5 @@
 ---
 title: Eastern Suburbs
-permalink: /locations/eastern-suburbs.html
 region: Eastern Suburbs
 venueAddress: Centennial Parklands
 venueCity: Centennial Park, Sydney NSW

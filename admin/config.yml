@@ -91,7 +91,6 @@ collections:
       - { label: Sidebar Trial Text, name: sidebarTrialText, widget: string, required: false }
       - { label: Layout, name: layout, widget: hidden, default: location }
       - { label: Tags, name: tags, widget: hidden, default: locations }
-      - { label: Permalink, name: permalink, widget: string, hint: "e.g. /locations/leichhardt.html" }
 
   - name: team
     label: Team Members
